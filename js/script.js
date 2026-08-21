@@ -29,13 +29,38 @@ function initApp() {
   initMarquees();
   window.addEventListener('resize', initMarquees);
 
-  // mobile nav toggle
+  // Scroll-based header glass effect
+  const siteHeader = document.querySelector('header.site-header');
+  if (siteHeader) {
+    const onScroll = () => {
+      if (window.scrollY > 20) {
+        siteHeader.classList.add('scrolled');
+      } else {
+        siteHeader.classList.remove('scrolled');
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  // mobile nav toggle — swap SVG icons
   const toggle = document.querySelector('.nav-toggle');
   const links = document.querySelector('.nav-links');
+  const iconMenu = document.getElementById('icon-menu');
+  const iconClose = document.getElementById('icon-close');
   if (toggle && links) {
     toggle.addEventListener('click', () => {
-      links.classList.toggle('open');
-      toggle.textContent = links.classList.contains('open') ? '✕' : '☰';
+      const isOpen = links.classList.toggle('open');
+      if (iconMenu) iconMenu.style.display = isOpen ? 'none' : '';
+      if (iconClose) iconClose.style.display = isOpen ? '' : 'none';
+    });
+    // close on outside click
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('header.site-header') && links.classList.contains('open')) {
+        links.classList.remove('open');
+        if (iconMenu) iconMenu.style.display = '';
+        if (iconClose) iconClose.style.display = 'none';
+      }
     });
   }
 
@@ -117,15 +142,17 @@ function initApp() {
     });
   });
 
-  // touch devices: tap to reveal feed-post overlay (hover doesn't exist on touch)
-  const noHover = window.matchMedia && window.matchMedia('(hover: none), (pointer: coarse)').matches;
-  if (noHover) {
+  // mobile & touch devices: tap to reveal feed-post overlay (hover doesn't exist on touch)
+  const isMobileOrTouch = (window.matchMedia && window.matchMedia('(hover: none), (pointer: coarse), (max-width: 860px)').matches) || ('ontouchstart' in window);
+  if (isMobileOrTouch) {
     document.querySelectorAll('.feed-post').forEach(post => {
-      // visible "tap for details" affordance so the info isn't hidden with no clue it exists
-      const hint = document.createElement('span');
-      hint.className = 'tap-hint';
-      hint.textContent = '👆 Tap for details';
-      post.appendChild(hint);
+      // visible "Tap for details" affordance so info isn't hidden with no clue it exists
+      if (!post.querySelector('.tap-hint')) {
+        const hint = document.createElement('span');
+        hint.className = 'tap-hint';
+        hint.textContent = 'Tap for details';
+        post.appendChild(hint);
+      }
 
       post.setAttribute('tabindex', '0');
       post.setAttribute('role', 'button');

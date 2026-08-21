@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us — Udaan Creations | Content & Growth Agency</title>
-<meta name="description" content="Meet Udaan Creations — a hands-on digital marketing & branding agency obsessed with Instagram growth, creative shoots, and algorithm mastery.">
+<title>About Us — Udaan Creations | Content &amp; Growth Agency</title>
+<meta name="description" content="Meet Udaan Creations — a hands-on digital marketing &amp; branding agency obsessed with Instagram growth, creative shoots, and algorithm mastery.">
 <meta name="keywords" content="about udaan creations, social media agency, branding team, instagram strategy, content creators, Gandhinagar digital marketing">
 <meta name="author" content="Udaan Creations">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://go-online-studio.github.io/udaan_creations/about.html">
-<meta name="theme-color" content="#120e1e">
+<meta name="theme-color" content="#0052D4">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
@@ -22,7 +22,7 @@
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="About Udaan Creations — Digital Marketing & Branding Agency">
+<meta property="og:image:alt" content="About Udaan Creations — Digital Marketing &amp; Branding Agency">
 <meta property="og:locale" content="en_US">
 
 <!-- Twitter Cards -->
@@ -30,7 +30,7 @@
 <meta name="twitter:title" content="About Us — Udaan Creations">
 <meta name="twitter:description" content="Small team. Big ambition. We give your brand liftoff with real strategy and scroll-stopping creative.">
 <meta name="twitter:image" content="https://go-online-studio.github.io/udaan_creations/images/og-image.jpg">
-<meta name="twitter:image:alt" content="About Udaan Creations — Digital Marketing & Branding Agency">
+<meta name="twitter:image:alt" content="About Udaan Creations — Digital Marketing &amp; Branding Agency">
 
 <!-- Favicons & Manifest -->
 <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
@@ -40,29 +40,40 @@
 <meta name="apple-mobile-web-app-title" content="Udaan_Creations" />
 <link rel="manifest" href="images/site.webmanifest" />
 
-<!-- Resource Preconnects & Preloads -->
+<!-- Resource Preconnects -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" href="js/script.js" as="script">
 <link rel="preload" href="images/Udaan_Logo.webp" as="image" type="image/webp" fetchpriority="high">
 
 <link rel="stylesheet" href="css/styles.css">
+<style>
+  @media (max-width: 900px){
+  .hero-header,.hero-details{
+     text-align: center;
+  }
+  .hero-sub{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+</style>
 </head>
 <body>
 
-<!-- Preloader (Max 3s fallback) -->
+<!-- Preloader -->
 <div id="page-loader" class="page-loader" aria-hidden="false" role="status" aria-label="Loading page">
   <div class="loader-content">
     <div class="loader-brand">
       <div class="loader-ring">
-        <div class="loader-ring-inner">✨</div>
+        <div class="loader-ring-inner">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg>
+        </div>
       </div>
       <div class="loader-title">Udaan<span class="accent">.</span></div>
     </div>
-    <div class="loader-bar-wrap">
-      <div class="loader-bar"></div>
-    </div>
-    <div class="loader-sub">Taking Flight 🚀</div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+    <div class="loader-sub">Initializing</div>
   </div>
 </div>
 <script>
@@ -72,30 +83,28 @@
     if(!l||l.classList.contains('loaded'))return;
     l.classList.add('loaded');
     l.setAttribute('aria-hidden','true');
-    setTimeout(function(){if(l&&l.parentNode)l.parentNode.removeChild(l);},450);
+    setTimeout(function(){if(l&&l.parentNode)l.parentNode.removeChild(l);},550);
   }
-  if(document.readyState==='complete'){
-    hide();
-  }else{
-    window.addEventListener('load',hide);
-    setTimeout(hide,3000);
-  }
+  if(document.readyState==='complete'){ hide(); }
+  else{ window.addEventListener('load',hide); setTimeout(hide,3000); }
 })();
 </script>
 
+<!-- Marquee Ticker -->
 <div class="marquee">
   <div class="marquee-track">
-    <span>✨ WE'RE CONTENT PEOPLE</span><span class="hi">●</span>
-    <span>🎬 STRATEGY + CREATIVE</span><span class="hi">●</span>
-    <span>💬 REAL TALK, REAL RESULTS</span><span class="hi">●</span>
-    <span>🚀 SMALL TEAM, BIG ENERGY</span><span class="hi">●</span>
-    <span>✨ WE'RE CONTENT PEOPLE</span><span class="hi">●</span>
-    <span>🎬 STRATEGY + CREATIVE</span><span class="hi">●</span>
-    <span>💬 REAL TALK, REAL RESULTS</span><span class="hi">●</span>
-    <span>🚀 SMALL TEAM, BIG ENERGY</span><span class="hi">●</span>
+    <span><svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>We're Content People</span><span class="hi">—</span>
+    <span><svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>Strategy Plus Creative</span><span class="hi">—</span>
+    <span><svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>Real Results, Real Growth</span><span class="hi">—</span>
+    <span><svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87m-4-12a4 4 0 0 1 0 7.75"/></svg>Small Team, Big Ambition</span><span class="hi">—</span>
+    <span><svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>We're Content People</span><span class="hi">—</span>
+    <span><svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>Strategy Plus Creative</span><span class="hi">—</span>
+    <span><svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>Real Results, Real Growth</span><span class="hi">—</span>
+    <span><svg class="marquee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87m-4-12a4 4 0 0 1 0 7.75"/></svg>Small Team, Big Ambition</span><span class="hi">—</span>
   </div>
 </div>
 
+<!-- Header -->
 <header class="site-header">
   <nav class="main-nav wrap">
     <a href="index.html" class="brand">
@@ -109,37 +118,92 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <div style="display:flex; align-items:center; gap:10px;">
-      <a href="contact.html" class="nav-cta">DM us →</a>
-      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <a href="contact.html" class="nav-cta">Get in Touch</a>
+      <button class="nav-toggle" aria-label="Toggle menu" id="nav-toggle-btn">
+        <svg id="icon-menu" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg id="icon-close" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
     </div>
   </nav>
 </header>
 
-<section class="hero" style="padding-bottom:50px;">
-  <div class="blob" style="top:-100px; right:-120px; width:320px; height:320px; background:var(--lime);"></div>
+<!-- Hero -->
+<section class="hero" style="padding-bottom: 56px;">
   <div class="wrap about-hero-grid">
-    <div>
-      <span class="eyebrow-tag"><span class="dot"></span> the crew</span>
-      <h1 class="display">Small team.<br>Big <span class="accent">ambition.</span><span class="scribble"> 🚀</span></h1>
-      <p class="hero-sub">Udaan means flight — and that's exactly what we're here to give your brand: liftoff. We're a small, hands-on agency that treats every client's Instagram like it's our own.</p>
+    <div class="hero-content">
+      <div class="hero-header">
+        <span class="eyebrow-tag"><span class="dot"></span> The Crew</span>
+        <h1 class="display">Small team.<br><span class="accent">Big ambition.</span></h1>
+      </div>
+      <div class="hero-details">
+        <p class="hero-sub">Udaan means flight — and that's exactly what we're here to give your brand: liftoff. We're a small, hands-on agency that treats every client's Instagram like it's our own.</p>
+      </div>
     </div>
+
+    <!-- Orbit Animation Graphic -->
     <div class="graphic-float">
+      <!-- Orbit rings -->
       <div class="orbit-ring"></div>
       <div class="orbit-ring"></div>
-      <div class="float-icon">📸</div>
-      <div class="float-icon">✍️</div>
-      <div class="float-icon">📊</div>
-      <div class="float-icon">🎨</div>
-      <div class="float-icon">🚀</div>
+
+      <!-- Center focal point -->
+      <div class="orbit-center">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m22 2-7 20-4-9-9-4 20-7z"/>
+        </svg>
+      </div>
+
+      <!-- Ring 1 (inner, 120px radius, CW 12s): Camera + Bar Chart -->
+      <div class="orbit-icon r1">
+        <div class="orbit-icon-inner">
+          <!-- Camera (Photography) -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+            <circle cx="12" cy="13" r="4"/>
+          </svg>
+        </div>
+      </div>
+      <div class="orbit-icon r1 delay-half">
+        <div class="orbit-icon-inner">
+          <!-- Bar Chart (Analytics) -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"/>
+            <line x1="12" y1="20" x2="12" y2="4"/>
+            <line x1="6" y1="20" x2="6" y2="14"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Ring 2 (outer, 162px radius, CCW 18s): Pen/Edit + Palette — blue accent on one -->
+      <div class="orbit-icon r2">
+        <div class="orbit-icon-inner blue">
+          <!-- Target / Strategy -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <circle cx="12" cy="12" r="6"/>
+            <circle cx="12" cy="12" r="2"/>
+          </svg>
+        </div>
+      </div>
+      <div class="orbit-icon r2 delay-half">
+        <div class="orbit-icon-inner">
+          <!-- Pen / Copywriting -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9"/>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+          </svg>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- Our Story -->
 <section>
   <div class="wrap">
     <div class="about-story-grid reveal">
       <div class="section-head" style="margin-bottom:0;">
-        <span class="kicker">our story</span>
+        <span class="kicker">Our Story</span>
         <h2>We started because brands were posting without a plan.</h2>
         <p>Too many small businesses were treating social media as an afterthought — inconsistent posts, no strategy, no growth to show for it. Udaan Creations exists to fix that: real strategy behind every post, real creative behind every shoot.</p>
       </div>
@@ -150,7 +214,9 @@
           </div>
           <div class="mini-label">Before</div>
         </div>
-        <span class="arrow-col">→</span>
+        <span class="arrow-col">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
         <div class="mini-grid-wrapper">
           <div class="compare-card organized">
             <img src="images/after_post.jpg" alt="After - High-Converting Curated Shoot" loading="lazy" decoding="async" width="400" height="400">
@@ -162,69 +228,95 @@
   </div>
 </section>
 
-<section style="background:var(--cloud); border-top:3px solid var(--ink); border-bottom:3px solid var(--ink);">
+<!-- Values -->
+<section class="alt-bg">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">what we believe</span>
+    <div class="section-head center reveal">
+      <span class="kicker">What We Believe</span>
       <h2>The values behind every post.</h2>
     </div>
     <div class="values-grid">
       <div class="value-card reveal">
         <span class="card-number">01</span>
-        <div class="card-icon">🎯</div>
-        <h3>Strategy first</h3>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <circle cx="12" cy="12" r="6"/>
+            <circle cx="12" cy="12" r="2"/>
+          </svg>
+        </div>
+        <h3>Strategy First</h3>
         <p>Every post has a reason to exist — awareness, engagement, or conversion. We don't post just to post.</p>
-        <div class="card-accent"></div>
       </div>
       <div class="value-card reveal">
         <span class="card-number">02</span>
-        <div class="card-icon">📅</div>
-        <h3>Consistency over hype</h3>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+        </div>
+        <h3>Consistency Over Hype</h3>
         <p>Growth compounds. We show up on schedule, every single week — because algorithms reward reliability.</p>
-        <div class="card-accent"></div>
       </div>
       <div class="value-card reveal">
         <span class="card-number">03</span>
-        <div class="card-icon">📸</div>
-        <h3>Real creative</h3>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+            <circle cx="12" cy="13" r="4"/>
+          </svg>
+        </div>
+        <h3>Real Creative</h3>
         <p>We shoot original content — no stock photos pretending to be your brand. Everything is authentically yours.</p>
-        <div class="card-accent"></div>
       </div>
       <div class="value-card reveal">
         <span class="card-number">04</span>
-        <div class="card-icon">📊</div>
-        <h3>Numbers that matter</h3>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"/>
+            <line x1="12" y1="20" x2="12" y2="4"/>
+            <line x1="6" y1="20" x2="6" y2="14"/>
+          </svg>
+        </div>
+        <h3>Numbers That Matter</h3>
         <p>We report on what actually moves your business, not just vanity likes. Real metrics, real insights.</p>
-        <div class="card-accent"></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Team -->
 <section>
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="kicker">who's behind the screen</span>
+      <span class="kicker">Who's Behind the Screen</span>
       <h2>A dedicated crew, not a call center.</h2>
       <p>You get a direct line to the people actually making your content — no account managers relaying messages back and forth.</p>
     </div>
     <div class="board reveal">
-      <div class="board-row head"><div>Seat</div><div>Role</div><div>What they own</div><div>Status</div></div>
-      <div class="board-row"><div class="flight-no">1A</div><div class="dest">Strategy Lead</div><div class="desc">Content pillars, calendar, and monthly growth reporting.</div><div class="time">On call</div></div>
-      <div class="board-row"><div class="flight-no">2A</div><div class="dest">Creative Director</div><div class="desc">Branding, visual identity, and shoot direction.</div><div class="time">On call</div></div>
-      <div class="board-row"><div class="flight-no">3A</div><div class="dest">Photographer</div><div class="desc">Product, portrait, and promo shoots.</div><div class="time">On call</div></div>
-      <div class="board-row"><div class="flight-no">4A</div><div class="dest">Community Manager</div><div class="desc">Daily posting, DMs, and audience engagement.</div><div class="time">On call</div></div>
+      <div class="board-row head"><div>Seat</div><div>Role</div><div>What They Own</div><div>Status</div></div>
+      <div class="board-row"><div class="flight-no">1A</div><div class="dest">Strategy Lead</div><div class="desc">Content pillars, calendar, and monthly growth reporting.</div><div class="time">On Call</div></div>
+      <div class="board-row"><div class="flight-no">2A</div><div class="dest">Creative Director</div><div class="desc">Branding, visual identity, and shoot direction.</div><div class="time">On Call</div></div>
+      <div class="board-row"><div class="flight-no">3A</div><div class="dest">Photographer</div><div class="desc">Product, portrait, and promo shoots.</div><div class="time">On Call</div></div>
+      <div class="board-row"><div class="flight-no">4A</div><div class="dest">Community Manager</div><div class="desc">Daily posting, DMs, and audience engagement.</div><div class="time">On Call</div></div>
     </div>
   </div>
 </section>
 
+<!-- CTA Band -->
 <div class="cta-band reveal">
   <div class="wrap">
     <h2>Want to see how we work?</h2>
     <p>Check out the services we run day to day.</p>
     <div class="hero-actions">
-      <a href="services.html" class="btn-primary">View services</a>
-      <a href="contact.html" class="btn-secondary">Say hello</a>
+      <a href="services.html" class="btn-primary">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        View Services
+      </a>
+      <a href="contact.html" class="btn-secondary">Say Hello</a>
     </div>
   </div>
 </div>
@@ -234,7 +326,7 @@
     <div class="footer-grid">
       <div>
         <img src="images/Udaan_Logo_Footer.webp" alt="Udaan Creations" class="footer-logo" loading="lazy" decoding="async">
-        <p style="opacity:0.75; font-size:14px; max-width:32ch;">Where ambition takes flight. We are a content-first digital marketing agency obsessed with the algorithm, helping modern brands grow through custom social media strategy, high-converting promo shoots, and authentic daily grid handling.</p>
+        <p>Where ambition takes flight. We are a content-first digital marketing agency obsessed with the algorithm, helping modern brands grow through custom social media strategy, high-converting promo shoots, and authentic daily grid handling.</p>
       </div>
       <div>
         <h2>Site</h2>
@@ -252,22 +344,22 @@
           <li><a href="https://www.instagram.com/udaan_creations/" target="_blank" rel="noopener">DM on Instagram</a></li>
           <li><a href="mailto:hello@udaancreations.com">hello@udaancreations.com</a></li>
           <li><a href="tel:+919825922470">+91 98259 22470</a></li>
-          <li style="margin-top: 10px; font-size: 13.5px; opacity: 0.75; line-height: 1.4;">Sector 11, Gandhinagar,<br>Gujarat, India - 382011</li>
+          <li style="margin-top: 10px; font-size: 13px; opacity: 0.5; line-height: 1.5;">Sector 11, Gandhinagar,<br>Gujarat, India - 382011</li>
         </ul>
       </div>
     </div>
-    <div class="wrap footer-bottom" style="justify-content: center; text-align: center; width: 100%;">
-      <span>© <span id="year">2026</span> All rights reserved by Udaan Creations. Designed and Developed by <a href="https://shriiitrackingsolution.in/" target="_blank" class=""><b>Shriii&nbsp;Tracking&nbsp;Solution</b></a></span>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> All rights reserved by Udaan Creations. Designed and Developed by <a href="https://shriiitrackingsolution.in/" target="_blank"><b>Shriii&nbsp;Tracking&nbsp;Solution</b></a></span>
     </div>
   </div>
 </footer>
 
 <div class="fab-container">
   <a href="tel:+919825922470" class="fab-btn fab-call" aria-label="Call Us">
-    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
   </a>
   <a href="#" class="fab-btn fab-wa" id="wa-fab" aria-label="WhatsApp Us" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.335 4.963L2 22l5.233-1.371a9.944 9.944 0 0 0 4.779 1.21h.005c5.506 0 9.99-4.478 9.99-9.985C22.007 6.476 17.519 2 12.012 2zm5.72 14.158c-.25.703-1.442 1.303-1.996 1.385-.503.076-1.163.14-3.361-.77-2.81-1.163-4.606-4.015-4.747-4.202-.14-.188-1.135-1.508-1.135-2.878 0-1.37.718-2.046.974-2.321.256-.275.562-.344.75-.344.187 0 .375.001.538.008.169.007.394-.063.619.479.225.543.769 1.874.837 2.012.069.138.113.298.02.482-.093.185-.14.298-.28.462-.14.165-.294.368-.42.493-.14.137-.286.287-.124.562.162.275.721 1.189 1.547 1.916.827.727 1.52 1.05 1.776 1.181.256.13.406.108.556-.062.15-.17.656-.763.831-1.02.175-.256.35-.213.594-.124.244.09.155.073.4.195s1.619.763 1.894.9c.275.137.456.206.52.316.064.11.064.637-.186 1.34z"/></svg>
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.335 4.963L2 22l5.233-1.371a9.944 9.944 0 0 0 4.779 1.21h.005c5.506 0 9.99-4.478 9.99-9.985C22.007 6.476 17.519 2 12.012 2zm5.72 14.158c-.25.703-1.442 1.303-1.996 1.385-.503.076-1.163.14-3.361-.77-2.81-1.163-4.606-4.015-4.747-4.202-.14-.188-1.135-1.508-1.135-2.878 0-1.37.718-2.046.974-2.321.256-.275.562-.344.75-.344.187 0 .375.001.538.008.169.007.394-.063.619.479.225.543.769 1.874.837 2.012.069.138.113.298.02.482-.093.185-.14.298-.28.462-.14.165-.294.368-.42.493-.14.137-.286.287-.124.562.162.275.721 1.189 1.547 1.916.827.727 1.52 1.05 1.776 1.181.256.13.406.108.556-.062.15-.17.656-.763.831-1.02.175-.256.35-.213.594-.124.244.09.155.073.4.195s1.619.763 1.894.9c.275.137.456.206.52.316.064.11.064.637-.186 1.34z"/></svg>
   </a>
 </div>
 
