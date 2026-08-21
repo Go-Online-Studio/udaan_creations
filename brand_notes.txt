@@ -44,38 +44,49 @@
   - Operational Scope: Servicing regional, national (Pan-India), and international clients.
 
 --------------------------------------------------------------------------------
-3. SERVICES BREAKDOWN
+3. SERVICES BREAKDOWN (10 CORE SERVICES)
 --------------------------------------------------------------------------------
-1. Social Media Handling & Management (Daily / Retainer)
-   • Detailed editorial calendars, curated grid aesthetic, strategic copywriting & captions.
-   • Daily posting, story management, hashtag architecture, and active DM/comment community engagement.
+1. 📸 Wedding Photography/ Videography (Event / Project)
+   • Complete traditional & candid wedding photography and 4K videography capturing every sacred ritual and celebration.
 
-2. Branding & Visual Identity (One-Time / Project)
-   • Logo suites, color guidelines, typographic hierarchies, social post templates, and brand identity kits that establish immediate recognition.
+2. 💑 Pre-Wedding-photohtaphy Videography (Shoot / Project)
+   • Concept-based romantic pre-wedding shoots with cinematic outdoor locations, drone aerials, and couple storytelling.
 
-3. Photography & Promo Shoots (Per Shoot / Production)
-   • Social-first product photography, founder & team portraiture, lifestyle shoots, commercial promo videos, and high-converting Instagram Reels.
+3. 📱 Wedding Reels & Short-form (24-48h Delivery)
+   • Dedicated wedding content creators delivering trending, music-synced vertical reels within 24 to 48 hours for Instagram.
 
-4. Content Strategy & Planning (Monthly / Retainer)
-   • Audience research, competitor benchmarking, content pillar architecture, hook formulation, and campaign calendar planning.
+4. 🎞️ Cinematic Wedding Films (Event / Film Production)
+   • 4K documentary teasers, cinematic highlights, bespoke color grading, and soundtrack-synced full-length wedding films.
 
-5. Paid Promotion & Performance Marketing (Monthly Retainer)
-   • Targeted Meta (Instagram & Facebook) advertising, audience segmentation, budget optimization, conversion tracking, and creative A/B testing.
+5. 🎥 Reels & Video Production (Commercial / Content Production)
+   • End-to-end commercial video production for brands and creators — concept scripting, multi-camera shoots, and high-converting edits.
 
-6. Growth Reporting & Performance Analytics (Monthly)
-   • Clear, actionable monthly reports highlighting reach, audience retention, engagement rates, follower growth velocity, and optimization roadmaps.
+6. 📱 Social Media Management (Monthly Retainer)
+   • Complete social media handling: monthly content calendars, captions, graphic design, daily posting, and active community engagement.
+
+7. 🎯 Meta Ads (Lead Generation)/google Ads (Monthly Retainer)
+   • High-converting paid advertising across Meta (Instagram/Facebook) and Google Search & Display engineered for direct leads and sales.
+
+8. 🎨 Product shoot (Studio / Lifestyle Production)
+   • Studio & lifestyle commercial product shoots, creative prop styling, and e-commerce catalogue images optimized for conversions.
+
+9. 🌐 Website Development (Project / Web App)
+   • High-speed, responsive corporate websites, creative portfolios, and lead capture landing pages built with clean code and modern UX.
+
+10. 🤝 Influencer Marketing (Campaign / Seeding)
+    • Influencer matchmaking, barter & paid collaboration management, creator briefing, and viral brand seeding across top social channels.
 
 --------------------------------------------------------------------------------
-4. ENGAGEMENT PACKAGES (SERVICE TIERS)
+4. ENGAGEMENT PACKAGES (CURATED SUITES)
 --------------------------------------------------------------------------------
-• Tier 1: ECO — "Content Only" (Monthly Retainer)
-  - Ideal for brands with an existing library of visual assets needing structured calendar management, captioning, posting, and daily community handling.
+• Suite 1: WED — "Wedding & Films Suite" (Event / Project)
+  - Wedding Photography/Videography, Pre-Wedding, 4K Cinematic Films, and 24h Wedding Reels for complete lifetime celebration coverage.
 
-• Tier 2: PLUS — "Content + Shoots" (Monthly Retainer)
-  - Everything in Content Only, plus recurring monthly on-location/studio photo and promo video shoots for continuous fresh content.
+• Suite 2: GRW — "Brand Growth Retainer" (Monthly Retainer)
+  - Full Social Media Management, Meta/Google Lead Ads, Content Strategy, and Viral Commercial Reels production.
 
-• Tier 3: BIZ — "Full Brand Flight" (Monthly Retainer)
-  - The comprehensive suite: complete branding/identity, monthly strategy, continuous shoots, daily social media handling, and paid performance ad management.
+• Suite 3: DEV — "Complete Digital & Studio Suite" (Custom Flight / Project)
+  - Custom Website Development, Commercial Product Shoots, Brand Identity, and Influencer Marketing Campaigns.
 
 --------------------------------------------------------------------------------
 5. CLIENT ONBOARDING & OPERATIONAL WORKFLOW

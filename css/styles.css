@@ -1236,7 +1236,7 @@ section.alt-bg {
   bottom: 14px;
   left: 16px;
   right: 16px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--white);
   letter-spacing: -0.01em;
@@ -2071,6 +2071,100 @@ form.contact-form .field-group.invalid .invalid-feedback {
 .reveal.in {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ============================================================
+   FAQ ACCORDION SECTION
+   ============================================================ */
+.faq-section {
+  padding: 80px 0;
+}
+.faq-container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 36px;
+}
+.faq-item {
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  box-shadow: 0 2px 8px rgba(10, 22, 40, 0.04);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.faq-item:hover {
+  border-color: rgba(0, 82, 212, 0.3);
+  box-shadow: var(--shadow-card);
+}
+.faq-item.active {
+  border-color: rgba(0, 82, 212, 0.45);
+  box-shadow: 0 4px 20px rgba(0, 82, 212, 0.08);
+}
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--navy);
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.faq-question:hover {
+  color: var(--blue);
+}
+.faq-item.active .faq-question {
+  color: var(--blue);
+}
+.faq-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  color: var(--navy);
+}
+.faq-item.active .faq-icon {
+  background: var(--gradient-blue);
+  color: var(--white);
+  border-color: transparent;
+  transform: rotate(180deg);
+}
+.faq-icon svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s ease;
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.faq-answer-inner {
+  padding: 0 24px 24px 24px;
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+.faq-answer-inner p + p {
+  margin-top: 10px;
 }
 
 /* ============================================================

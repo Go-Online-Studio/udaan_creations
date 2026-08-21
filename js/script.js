@@ -142,6 +142,39 @@ function initApp() {
     });
   });
 
+  // FAQ Accordion
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    if (!question || !answer) return;
+
+    question.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+
+      // Close all other items (accordion mode)
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.classList.remove('active');
+          const otherQ = otherItem.querySelector('.faq-question');
+          const otherA = otherItem.querySelector('.faq-answer');
+          if (otherQ) otherQ.setAttribute('aria-expanded', 'false');
+          if (otherA) otherA.style.maxHeight = null;
+        }
+      });
+
+      if (isActive) {
+        item.classList.remove('active');
+        question.setAttribute('aria-expanded', 'false');
+        answer.style.maxHeight = null;
+      } else {
+        item.classList.add('active');
+        question.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+
   // mobile & touch devices: tap to reveal feed-post overlay (hover doesn't exist on touch)
   const isMobileOrTouch = (window.matchMedia && window.matchMedia('(hover: none), (pointer: coarse), (max-width: 860px)').matches) || ('ontouchstart' in window);
   if (isMobileOrTouch) {
