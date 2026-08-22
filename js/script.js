@@ -178,7 +178,7 @@ function initApp() {
   // mobile & touch devices: tap to reveal feed-post overlay (hover doesn't exist on touch)
   const isMobileOrTouch = (window.matchMedia && window.matchMedia('(hover: none), (pointer: coarse), (max-width: 860px)').matches) || ('ontouchstart' in window);
   if (isMobileOrTouch) {
-    document.querySelectorAll('.feed-post').forEach(post => {
+    document.querySelectorAll('.feed-post:not(.service-card)').forEach(post => {
       // visible "Tap for details" affordance so info isn't hidden with no clue it exists
       if (!post.querySelector('.tap-hint')) {
         const hint = document.createElement('span');

@@ -2569,3 +2569,101 @@ form.contact-form .field-group.invalid .invalid-feedback {
     transition: none;
   }
 }
+
+/* ============================================================
+   SERVICE CARD STYLES (For index and services pages)
+   ============================================================ */
+
+
+.service-card .bg {
+  aspect-ratio: 4 / 3;
+}
+.service-card {
+  display: flex;
+  flex-direction: column;
+}
+.service-card-link {
+  flex: 1;
+  display: block;
+}
+.service-card-action {
+  padding: 16px;
+  background: var(--white);
+  border-top: 1px solid var(--gray-100);
+  display: flex;
+  justify-content: center;
+}
+.service-card-action .wa-quick-btn {
+  position: static;
+  background: var(--blue);
+  color: var(--white);
+  width: 100%;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.service-card-action .wa-quick-btn:hover {
+  background: var(--blue-mid);
+}
+
+/* ============================================================
+   SWIPER CUSTOMIZATIONS
+   ============================================================ */
+.swiper {
+  padding-bottom: 50px !important;
+}
+
+.swiper-pagination-bullet {
+  background: var(--gray-400);
+  opacity: 0.5;
+}
+.swiper-pagination-bullet-active {
+  background: var(--blue);
+  opacity: 1;
+}
+
+/* Custom Navigation Buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: var(--white);
+  color: var(--text-primary);
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--gray-100);
+  transition: var(--transition);
+  top: calc(50% - 22px);
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: var(--blue);
+  color: var(--white);
+  transform: scale(1.05);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 18px !important;
+  font-weight: bold;
+}
+
+.swiper-button-disabled {
+  opacity: 0.8 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
+.swiper-button-lock {
+  display: flex !important;
+}
