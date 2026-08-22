@@ -43,8 +43,7 @@
   <!-- Bootstrap 5 CSS (Grid & Utilities) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- GLightbox CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
 
   <!-- Structured Data JSON-LD for Search Engines -->
   <script type="application/ld+json">
@@ -656,39 +655,126 @@
       color: #fff;
     }
 
-    /* GLightbox Custom Dark Theming */
-    .glightbox-clean .gslide-description {
-      background: rgba(5, 11, 20, 0.92);
+    /* ─── Custom Video Lightbox ───────────────────────────── */
+    #vl-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(3, 7, 14, 0.97);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
     }
-    .glightbox-clean .gslide-title {
-      color: #fff;
-      font-family: var(--font-sans);
-      font-size: 14px;
-      font-weight: 600;
+    #vl-overlay.vl-open {
+      display: flex;
+      animation: vlFadeIn 0.28s ease;
     }
-    .glightbox-clean .gdesc-inner {
-      padding: 10px 16px;
+    @keyframes vlFadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
     }
-    .glightbox-clean .gclose,
-    .glightbox-clean .gnext,
-    .glightbox-clean .gprev {
-      height: 50px;
-      width: 50px;
-      background: rgba(5, 11, 20, 0.7);
+    #vl-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10001;
+      transition: background 0.2s;
     }
-    .glightbox-clean .gclose:hover,
-    .glightbox-clean .gnext:hover,
-    .glightbox-clean .gprev:hover {
-      background: var(--blue-electric);
+    #vl-close:hover { background: rgba(220,39,67,0.7); }
+    #vl-close svg { pointer-events: none; }
+
+    #vl-caption {
+      position: absolute;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 13.5px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.75);
+      white-space: nowrap;
+      letter-spacing: 0.03em;
+      pointer-events: none;
+      max-width: 70vw;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-    .glightbox-clean .gvideo-wrapper {
-      max-height: 92vh !important;
+
+    #vl-video-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      padding: 70px 80px 24px;
     }
-    .glightbox-clean .gvideo-wrapper video {
-      max-height: 90vh !important;
-      border-radius: var(--radius-md);
+    @media (max-width: 600px) {
+      #vl-video-wrap { padding: 64px 52px 16px; }
+    }
+    #vl-video {
+      max-height: 88vh;
+      max-width: 100%;
+      border-radius: 14px;
+      background: #000;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.8);
+      outline: none;
+      display: block;
+    }
+
+    /* Prev / Next Buttons */
+    .vl-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(10,22,40,0.75);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10001;
+      transition: background 0.2s, transform 0.18s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .vl-nav:hover { background: var(--blue-electric); transform: translateY(-50%) scale(1.08); }
+    .vl-nav svg { pointer-events: none; }
+    #vl-prev { left: 12px; }
+    #vl-next { right: 12px; }
+    @media (max-width: 480px) {
+      #vl-prev { left: 4px; }
+      #vl-next { right: 4px; }
+      .vl-nav { width: 44px; height: 44px; }
+    }
+
+    /* Counter pill */
+    #vl-counter {
+      position: absolute;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+      pointer-events: none;
     }
 
     /* Accessibility utility */
@@ -909,10 +995,26 @@
 
   </div> <!-- /relative-content -->
 
+  <!-- ─── Custom Video Lightbox Overlay ─── -->
+  <div id="vl-overlay" role="dialog" aria-modal="true" aria-label="Video player">
+    <div id="vl-caption" aria-live="polite"></div>
+    <button id="vl-close" aria-label="Close video">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="vl-nav" id="vl-prev" aria-label="Previous video">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div id="vl-video-wrap">
+      <video id="vl-video" controls playsinline controlsList="nodownload" disablePictureInPicture></video>
+    </div>
+    <button class="vl-nav" id="vl-next" aria-label="Next video">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div id="vl-counter"></div>
+  </div>
+
   <!-- Bootstrap 5 JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- GLightbox JS -->
-  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
   <!-- Video Gallery Data & Script -->
   <script>
@@ -1067,87 +1169,118 @@
       }
     ];
 
-    const videoGrid = document.getElementById('video-grid');
+    const videoGrid  = document.getElementById('video-grid');
+    const overlay    = document.getElementById('vl-overlay');
+    const vlVideo    = document.getElementById('vl-video');
+    const vlCaption  = document.getElementById('vl-caption');
+    const vlCounter  = document.getElementById('vl-counter');
+    const btnClose   = document.getElementById('vl-close');
+    const btnPrev    = document.getElementById('vl-prev');
+    const btnNext    = document.getElementById('vl-next');
+    let   currentIdx = 0;
 
-    // Render Video Grid with Semantic HTML & GLightbox data attributes
+    // ── Render grid cards ─────────────────────────────────────────────────────
     function renderGrid() {
       let html = '';
-      videosData.forEach(video => {
+      videosData.forEach((video, idx) => {
         html += `
           <article class="col video-card-col" itemscope itemtype="https://schema.org/VideoObject">
-            <a href="${video.videoUrl}" 
-               class="video-card-reels glightbox" 
-               data-gallery="udaan-reels-gallery" 
-               data-type="video"
-               data-description="${video.title} &bull; Udaan Creations"
+            <a href="${video.videoUrl}"
+               class="video-card-reels"
+               data-video-index="${idx}"
                aria-label="Play video: ${video.title}">
-               
               <figure class="m-0 p-0 position-relative w-100 h-100">
-                <img src="${video.thumbnail}" 
-                     alt="${video.title} - Reel by Udaan Creations" 
-                     class="video-poster-img" 
-                     loading="lazy"
-                     itemprop="thumbnailUrl"
+                <img src="${video.thumbnail}"
+                     alt="${video.title} - Reel by Udaan Creations"
+                     class="video-poster-img" loading="lazy" itemprop="thumbnailUrl"
                      onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&q=80'">
-
-                <div class="reels-top-badge" aria-label="Category: ${video.category}">
-                  <span>✦</span> ${video.category}
-                </div>
-
+                <div class="reels-top-badge"><span>✦</span> ${video.category}</div>
                 <div class="reels-center-overlay" aria-hidden="true">
                   <div class="play-glass-btn">
                     <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                   </div>
                 </div>
-
                 <figcaption class="reels-card-footer">
                   <h3 class="reels-card-title" itemprop="name">${video.title}</h3>
-                  <div class="reels-card-subtitle">
-                    <span>▶ Watch Reel</span>
-                  </div>
+                  <div class="reels-card-subtitle"><span>▶ Watch Reel</span></div>
                 </figcaption>
               </figure>
             </a>
             <meta itemprop="contentUrl" content="${video.videoUrl}">
             <meta itemprop="uploadDate" content="2026-01-01">
-            <meta itemprop="description" content="${video.title} social media video and reel created by Udaan Creations.">
-          </article>
-        `;
+            <meta itemprop="description" content="${video.title} social media reel by Udaan Creations.">
+          </article>`;
       });
-
       videoGrid.innerHTML = html;
     }
 
-    // Initialize GLightbox video gallery
-    document.addEventListener('DOMContentLoaded', function() {
+    // ── Lightbox helpers ──────────────────────────────────────────────────────
+    function openAt(idx) {
+      currentIdx = ((idx % videosData.length) + videosData.length) % videosData.length;
+      const v = videosData[currentIdx];
+      vlVideo.src   = v.videoUrl;
+      vlVideo.load();
+      vlVideo.play().catch(() => {});
+      vlCaption.textContent = v.title + ' • Udaan Creations';
+      vlCounter.textContent = (currentIdx + 1) + ' / ' + videosData.length;
+      overlay.classList.add('vl-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLB() {
+      vlVideo.pause();
+      vlVideo.removeAttribute('src');
+      vlVideo.load();
+      overlay.classList.remove('vl-open');
+      document.body.style.overflow = '';
+    }
+
+    // ── Wire up events ────────────────────────────────────────────────────────
+    document.addEventListener('DOMContentLoaded', function () {
       renderGrid();
 
-      const lightbox = GLightbox({
-        selector: '.glightbox',
-        touchNavigation: true,
-        loop: true,
-        autoplayVideos: true,
-        moreLength: 0,
-        skin: 'clean',
-        videosWidth: '520px',
-        plyr: {
-          config: {
-            ratio: '9:16',
-            muted: false,
-            hideControls: false,
-            youtube: { noCookie: true, rel: 0, showinfo: 0, iv_load_policy: 3 }
-          }
-        }
+      // Card click
+      videoGrid.addEventListener('click', function (e) {
+        const card = e.target.closest('.video-card-reels');
+        if (!card) return;
+        e.preventDefault();
+        openAt(parseInt(card.dataset.videoIndex, 10));
       });
 
-      // Prevent right-click on open video
-      document.addEventListener('contextmenu', function(e) {
-        if (e.target.tagName === 'VIDEO') {
-          e.preventDefault();
-          return false;
-        }
+      // Buttons
+      btnClose.addEventListener('click', closeLB);
+      btnPrev.addEventListener('click', function (e) { e.stopPropagation(); openAt(currentIdx - 1); });
+      btnNext.addEventListener('click', function (e) { e.stopPropagation(); openAt(currentIdx + 1); });
+
+      // Click on dark backdrop (not on video/controls) → close
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closeLB();
+      });
+
+      // Keyboard
+      document.addEventListener('keydown', function (e) {
+        if (!overlay.classList.contains('vl-open')) return;
+        if (e.key === 'Escape')      closeLB();
+        if (e.key === 'ArrowLeft')   openAt(currentIdx - 1);
+        if (e.key === 'ArrowRight')  openAt(currentIdx + 1);
+      });
+
+      // Swipe on mobile — track on overlay so it works even over the video element
+      let swipeX = 0;
+      overlay.addEventListener('touchstart', function (e) {
+        swipeX = e.changedTouches[0].clientX;
+      }, { passive: true });
+      overlay.addEventListener('touchend', function (e) {
+        const dx = e.changedTouches[0].clientX - swipeX;
+        if (Math.abs(dx) > 48) dx < 0 ? openAt(currentIdx + 1) : openAt(currentIdx - 1);
+      }, { passive: true });
+
+      // Right-click guard on video
+      document.addEventListener('contextmenu', function (e) {
+        if (e.target.tagName === 'VIDEO') { e.preventDefault(); return false; }
       });
     });
   </script>
 </body>
 </html>
+
