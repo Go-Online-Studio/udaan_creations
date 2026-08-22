@@ -43,8 +43,8 @@
   <!-- Bootstrap 5 CSS (Grid & Utilities) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Fancybox 5 CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+  <!-- GLightbox CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
   <!-- Structured Data JSON-LD for Search Engines -->
   <script type="application/ld+json">
@@ -454,6 +454,7 @@
       object-fit: cover;
       transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
       display: block;
+      pointer-events: none;
     }
     .video-card-reels:hover .video-poster-img {
       transform: scale(1.06);
@@ -478,6 +479,7 @@
       color: var(--blue-cyan);
       text-transform: uppercase;
       letter-spacing: 0.04em;
+      pointer-events: none;
     }
 
     /* Reels Center Play Overlay */
@@ -490,6 +492,7 @@
       justify-content: center;
       background: linear-gradient(180deg, rgba(5, 11, 20, 0.05) 0%, rgba(5, 11, 20, 0.25) 50%, rgba(5, 11, 20, 0.85) 100%);
       transition: opacity 0.3s ease;
+      pointer-events: none;
     }
     .play-glass-btn {
       width: 48px;
@@ -505,6 +508,7 @@
       color: #fff;
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
       transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+      pointer-events: none;
     }
     .video-card-reels:hover .play-glass-btn {
       transform: scale(1.12);
@@ -517,6 +521,7 @@
       height: 22px;
       fill: currentColor;
       margin-left: 2px;
+      pointer-events: none;
     }
 
     /* Reels Bottom Title Info */
@@ -540,6 +545,7 @@
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      pointer-events: none;
     }
     .reels-card-subtitle {
       font-size: 10.5px;
@@ -549,6 +555,7 @@
       display: flex;
       align-items: center;
       gap: 3px;
+      pointer-events: none;
     }
 
     /* Minimal Footer with Exact Current Website Contact & Copyright */
@@ -649,23 +656,39 @@
       color: #fff;
     }
 
-    /* Fancybox Custom Dark Adaptation for Video Lightbox */
-    .fancybox__container {
-      --fancybox-bg: rgba(5, 11, 20, 0.96);
-      --fancybox-color: #fff;
-      --fancybox-accent-color: #4364F7;
+    /* GLightbox Custom Dark Theming */
+    .glightbox-clean .gslide-description {
+      background: rgba(5, 11, 20, 0.92);
     }
-    .fancybox__content {
+    .glightbox-clean .gslide-title {
+      color: #fff;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .glightbox-clean .gdesc-inner {
+      padding: 10px 16px;
+    }
+    .glightbox-clean .gclose,
+    .glightbox-clean .gnext,
+    .glightbox-clean .gprev {
+      height: 50px;
+      width: 50px;
+      background: rgba(5, 11, 20, 0.7);
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .glightbox-clean .gclose:hover,
+    .glightbox-clean .gnext:hover,
+    .glightbox-clean .gprev:hover {
+      background: var(--blue-electric);
+    }
+    .glightbox-clean .gvideo-wrapper {
+      max-height: 92vh !important;
+    }
+    .glightbox-clean .gvideo-wrapper video {
+      max-height: 90vh !important;
       border-radius: var(--radius-md);
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
-      background: #000 !important;
-    }
-    .fancybox__html5video {
-      max-height: 85vh !important;
-      max-width: 90vw !important;
-      object-fit: contain;
-      outline: none;
     }
 
     /* Accessibility utility */
@@ -888,8 +911,8 @@
 
   <!-- Bootstrap 5 JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Fancybox 5 JS -->
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <!-- GLightbox JS -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
   <!-- Video Gallery Data & Script -->
   <script>
@@ -1046,18 +1069,17 @@
 
     const videoGrid = document.getElementById('video-grid');
 
-    // Render Video Grid with Semantic HTML elements & Fancybox 5 data attributes
+    // Render Video Grid with Semantic HTML & GLightbox data attributes
     function renderGrid() {
       let html = '';
       videosData.forEach(video => {
         html += `
           <article class="col video-card-col" itemscope itemtype="https://schema.org/VideoObject">
             <a href="${video.videoUrl}" 
-               class="video-card-reels" 
-               data-fancybox="udaan-reels-gallery" 
-               data-type="html5video"
-               data-caption="${video.title} &bull; Udaan Creations" 
-               data-thumb="${video.thumbnail}"
+               class="video-card-reels glightbox" 
+               data-gallery="udaan-reels-gallery" 
+               data-type="video"
+               data-description="${video.title} &bull; Udaan Creations"
                aria-label="Play video: ${video.title}">
                
               <figure class="m-0 p-0 position-relative w-100 h-100">
@@ -1096,52 +1118,35 @@
       videoGrid.innerHTML = html;
     }
 
-    // Initialize Fancybox
+    // Initialize GLightbox video gallery
     document.addEventListener('DOMContentLoaded', function() {
       renderGrid();
 
-      // Bind Fancybox 5 specifically configured for HTML5 vertical video playback
-      Fancybox.bind('[data-fancybox="udaan-reels-gallery"]', {
+      const lightbox = GLightbox({
+        selector: '.glightbox',
+        touchNavigation: true,
         loop: true,
-        compact: false,
-        dragToClose: true,
-        Html: {
-          video: {
-            autoplay: true,
-            controls: true,
-            playsinline: true,
-            controlsList: 'nodownload'
-          }
-        },
-        Toolbar: {
-          display: {
-            left: ["infobar"],
-            middle: [],
-            right: ["iterateZoom", "close"]
-          }
-        },
-        Thumbs: {
-          autoStart: false
-        },
-        on: {
-          reveal: (fancybox, slide) => {
-            const videoElem = slide.$el.querySelector('video');
-            if (videoElem) {
-              videoElem.setAttribute('controlsList', 'nodownload');
-              videoElem.setAttribute('disablePictureInPicture', 'true');
-              videoElem.addEventListener('contextmenu', e => e.preventDefault());
-            }
+        autoplayVideos: true,
+        moreLength: 0,
+        skin: 'clean',
+        videosWidth: '520px',
+        plyr: {
+          config: {
+            ratio: '9:16',
+            muted: false,
+            hideControls: false,
+            youtube: { noCookie: true, rel: 0, showinfo: 0, iv_load_policy: 3 }
           }
         }
       });
-    });
 
-    // Right-Click Protection on Video Cards
-    document.addEventListener('contextmenu', function(e) {
-      if (e.target.closest('.video-card-reels') || e.target.tagName === 'VIDEO') {
-        e.preventDefault();
-        return false;
-      }
+      // Prevent right-click on open video
+      document.addEventListener('contextmenu', function(e) {
+        if (e.target.tagName === 'VIDEO') {
+          e.preventDefault();
+          return false;
+        }
+      });
     });
   </script>
 </body>
